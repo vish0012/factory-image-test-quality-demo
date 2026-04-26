@@ -32,7 +32,7 @@ The release-gate script checks whether a site/product combination should pass or
 
 - crashes
 - thermal throttling
-- golden-set stability
+- reference test set
 - 99th-percentile processing time compared with the previous stable version
 
 ### 4. Coplanarity analysis
