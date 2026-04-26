@@ -20,7 +20,7 @@ The local agent would:
 - check the approved release manifest
 - verify the artifact hash and signature
 - install only during an agreed maintenance window
-- run local smoke tests and golden-image checks before promotion
+- run local smoke tests and reference test image checks before promotion
 - keep the previous version available for immediate rollback
 
 The release manifest should be the central source of truth for site, product, machine, algorithm version, parameter version, configuration, rollout stage, and rollback version.
@@ -47,22 +47,22 @@ For each test, I would record:
 - timestamp
 - output summary
 
-To control storage cost, I would keep all failed cases, a sample of passing cases, and a fixed golden reference set. Full-resolution images should be kept mainly for failures and representative samples. For routine passing cases, hashes, metadata, result maps, and compressed references may be enough.
+To control storage cost, I would keep all failed cases, a sample of passing cases, and a fixed reference test set. Full-resolution images should be kept mainly for failures and representative samples. For routine passing cases, hashes, metadata, result maps, and compressed references may be enough.
 
-For regression testing, I would separate bugs from intended algorithm improvements. A result change is a bug if expected invariant behavior changes without being declared. A result change can be accepted as an improvement only when the expected change is declared before merge and verified on golden datasets.
+For regression testing, I would separate bugs from intended algorithm improvements. A result change is a bug if expected invariant behavior changes without being declared. A result change can be accepted as an improvement only when the expected change is declared before merge and verified on reference datasets.
 
 A release should not be promoted unless it passes clear gates:
 
 - zero crashes
 - no memory leaks
 - no thermal throttling
-- stable golden-set results
+- stable reference test set results
 - 99th-percentile processing time within 20% of the previous stable version
 - no unexplained increase in false calls or missed defects
 
 ## 3. Quality Metrics and Communication
 
-For engineers, I would track escape rate, test coverage, flaky tests, lead time, mean time to recovery, golden-set drift, runtime trend, and rollback rate.
+For engineers, I would track escape rate, test coverage, flaky tests, lead time, mean time to recovery, reference-set drift, runtime trend, and rollback rate.
 
 For factory and leadership teams, I would translate these into line uptime, yield impact, scrap impact, affected sites, affected products, recovery time, and shipment risk.
 

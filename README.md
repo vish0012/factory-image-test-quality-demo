@@ -2,7 +2,7 @@
 
 ![CI](https://github.com/vish0012/factory-image-test-quality-demo/actions/workflows/run-demo.yml/badge.svg)
 
-This repository is a small working demo for a an assignment.
+This repository is a small working demo for a Software Quality Engineer assignment.
 
 The scenario is a manufacturing environment where image-testing software must be deployed to vendor factory sites. Direct VPN access into each vendor network is not reliable, so the solution focuses on safe rollout, reproducible testing, release gates, and clear communication of production risk.
 
@@ -32,7 +32,7 @@ The release-gate script checks whether a site/product combination should pass or
 
 - crashes
 - thermal throttling
-- reference test set
+- reference test set stability
 - 99th-percentile processing time compared with the previous stable version
 
 ### 4. Coplanarity analysis
