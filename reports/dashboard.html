@@ -1,0 +1,119 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>SQE Factory Quality Dashboard</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 28px; line-height: 1.4; }
+    h1 { margin-bottom: 0; }
+    h2 { margin-top: 28px; border-bottom: 1px solid #ccc; padding-bottom: 4px; }
+    table { border-collapse: collapse; width: 100%; margin-top: 10px; }
+    th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+    th { background: #f2f2f2; }
+    .note { background: #f8f8f8; padding: 12px; border-left: 4px solid #999; }
+    img { max-width: 47%; margin: 10px 1%; vertical-align: top; border: 1px solid #ddd; }
+  </style>
+</head>
+<body>
+  <h1>SQE Factory Quality Dashboard</h1>
+  <p class="note">
+    Goal: translate technical quality signals into production risk.
+    Example: if processing time increases at Site C, the site may process fewer units per hour,
+    which can put the shift target and shipment plan at risk.
+  </p>
+
+  <h2>Release Gate Summary</h2>
+  <table>
+    <tr>
+      <th>Status</th><th>Site</th><th>Product</th><th>Algorithm</th>
+      <th>99th-percentile processing time</th><th>Production risk</th>
+    </tr>
+    
+            <tr>
+              <td>GREEN</td>
+              <td>Site A</td>
+              <td>CameraModule-X</td>
+              <td>2.4.1</td>
+              <td>135.9 ms</td>
+              <td>no immediate production risk</td>
+            </tr>
+            
+            <tr>
+              <td>GREEN</td>
+              <td>Site A</td>
+              <td>CameraModule-Y</td>
+              <td>2.4.1</td>
+              <td>151.2 ms</td>
+              <td>no immediate production risk</td>
+            </tr>
+            
+            <tr>
+              <td>GREEN</td>
+              <td>Site B</td>
+              <td>CameraModule-X</td>
+              <td>2.4.0</td>
+              <td>132.5 ms</td>
+              <td>no immediate production risk</td>
+            </tr>
+            
+            <tr>
+              <td>GREEN</td>
+              <td>Site B</td>
+              <td>CameraModule-Y</td>
+              <td>2.4.0</td>
+              <td>148.3 ms</td>
+              <td>no immediate production risk</td>
+            </tr>
+            
+            <tr>
+              <td>AMBER</td>
+              <td>Site C</td>
+              <td>CameraModule-X</td>
+              <td>2.4.1</td>
+              <td>169.3 ms</td>
+              <td>crash risk, thermal risk</td>
+            </tr>
+            
+            <tr>
+              <td>AMBER</td>
+              <td>Site C</td>
+              <td>CameraModule-Y</td>
+              <td>2.4.1</td>
+              <td>185.7 ms</td>
+              <td>thermal risk, throughput risk</td>
+            </tr>
+            
+  </table>
+
+  <h2>Coplanarity Summary</h2>
+  <table>
+    <tr>
+      <th>Month</th><th>Parts</th><th>Mean RMS residual</th>
+      <th>Mean peak-to-valley</th><th>Mean product score</th>
+    </tr>
+    
+            <tr>
+              <td>current</td>
+              <td>300</td>
+              <td>0.217 µm</td>
+              <td>1.082 µm</td>
+              <td>94.43</td>
+            </tr>
+            
+            <tr>
+              <td>previous</td>
+              <td>300</td>
+              <td>0.186 µm</td>
+              <td>0.938 µm</td>
+              <td>95.59</td>
+            </tr>
+            
+  </table>
+
+  <h2>Plots</h2>
+  <img src="coplanarity_boxplot.png" alt="Coplanarity box plot">
+  <img src="coplanarity_ecdf.png" alt="Coplanarity ECDF">
+  <img src="height_difference_map.png" alt="Height difference map">
+  <img src="performance_vs_coplanarity.png" alt="Performance vs coplanarity">
+</body>
+</html>

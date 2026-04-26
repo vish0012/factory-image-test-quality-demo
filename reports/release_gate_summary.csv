@@ -1,0 +1,7 @@
+site,product,algorithm_version,tests,crashes,thermal_events,false_positives,false_negatives,p99_processing_time_ms,pass_rate,p99_limit_ms,release_gate_status,production_risk
+Site A,CameraModule-X,2.4.1,2945,0,0,30,12,135.8656,0.9857385398981324,180.0,PASS,no immediate production risk
+Site A,CameraModule-Y,2.4.1,1583,0,0,11,4,151.24000000000004,0.9905243209096652,180.0,PASS,no immediate production risk
+Site B,CameraModule-X,2.4.0,2657,0,0,12,14,132.54280000000003,0.9902145276627776,180.0,PASS,no immediate production risk
+Site B,CameraModule-Y,2.4.0,1458,0,0,11,3,148.2647,0.99039780521262,180.0,PASS,no immediate production risk
+Site C,CameraModule-X,2.4.1,2166,1,5,32,23,169.30399999999997,0.974145891043398,180.0,REVIEW,"crash risk, thermal risk"
+Site C,CameraModule-Y,2.4.1,1191,0,1,17,7,185.67,0.9798488664987406,180.0,REVIEW,"thermal risk, throughput risk"

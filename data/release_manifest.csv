@@ -1,0 +1,4 @@
+site,product,machine,os,artifact_type,algorithm_version,parameter_version,config_version,rollout_stage,previous_version,signature_verified,install_window
+Site A,CameraModule-X,A-IMG-001,Windows,DLL,2.4.1,p17,cfg-2026-04,pilot_site,2.4.0,True,maintenance
+Site B,CameraModule-X,B-IMG-014,Windows,DLL,2.4.0,p16,cfg-2026-03,broader_rollout,2.3.9,True,maintenance
+Site C,CameraModule-Y,C-MAC-006,macOS,ServerApp,2.4.1,p22,cfg-2026-04,pilot_machine,2.4.0,True,maintenance
