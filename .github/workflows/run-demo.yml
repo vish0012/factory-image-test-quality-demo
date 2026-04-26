@@ -62,7 +62,7 @@ jobs:
         run: python src/make_dashboard.py
 
       - name: Upload reports
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: sqe-demo-reports
           path: reports/
