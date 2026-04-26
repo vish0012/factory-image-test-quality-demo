@@ -4,7 +4,6 @@
 
 This repository is a small working demo for an assignment.
 
-The scenario is a manufacturing environment where image-testing software must be deployed to vendor factory sites. Direct VPN access into each vendor network is not reliable, so the solution focuses on safe rollout, reproducible testing, release gates, and clear communication of production risk.
 
 ## What this demo covers
 
